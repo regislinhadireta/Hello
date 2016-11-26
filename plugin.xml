@@ -3,7 +3,7 @@
         id="com.example.hello"
         version="0.7.0">
 
-  <name>Hello</name>
+  <name>WiFi</name>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
@@ -11,8 +11,8 @@
 
   <asset src="www/hello.js" target="js/hello.js"/>
 
-  <js-module src="www/hello.js" name="hello">
-    <clobbers target="hello" />
+  <js-module src="www/hello.js" name="wifi">
+    <clobbers target="wifi" />
   </js-module>
 
   <platform name="android">
