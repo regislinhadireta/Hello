@@ -8,7 +8,14 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
 public class Wifi extends CordovaPlugin {
-
+    private WifiManager wifiManager;
+    
+    @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+        this.wifiManager = (WifiManager) cordova.getActivity().getSystemService(Context.WIFI_SERVICE);
+    }
+    
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
@@ -17,7 +24,6 @@ public class Wifi extends CordovaPlugin {
             String name = data.getString(0);
             String message = "Trabalhando, " + name;
             
-            WifiManager wifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
             WifiInfo wifiInfo = wifiManager.getConnectionInfo();
             String ssid = wifiInfo.getSSID();
             
