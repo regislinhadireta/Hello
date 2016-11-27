@@ -3,6 +3,9 @@ package com.risf.plugin;
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
+import android.content.Context;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 
 public class Wifi extends CordovaPlugin {
 
@@ -13,7 +16,12 @@ public class Wifi extends CordovaPlugin {
 
             String name = data.getString(0);
             String message = "Trabalhando, " + name;
-            callbackContext.success(message);
+            
+            WifiManager wifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
+            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+            String ssid = wifiInfo.getSSID();
+            
+            callbackContext.success(ssid);
 
             return true;
 
