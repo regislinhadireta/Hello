@@ -4,8 +4,13 @@ import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import android.content.Context;
-import android.net.wifi.WifiInfo;
+import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiEnterpriseConfig;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.SupplicantState;
 
 public class Wifi extends CordovaPlugin {
  
