@@ -22,9 +22,34 @@ public class Wifi extends CordovaPlugin {
 
         if (action.equals("getSSID")) {
 
-            String name = data.getString(0);
-            String message = "Trabalhando, " + name;
-            callbackContext.success(message);
+         
+        if(!wifiManager.isWifiEnabled()){
+            callbackContext.error("Wifi desligado");
+            return false;
+        }
+
+        WifiInfo info = wifiManager.getConnectionInfo();
+
+        if(info == null){
+            callbackContext.error("Sem informações do Wifi");
+            return false;
+        }
+
+        String ssid = info.getSSID();
+        if(ssid.isEmpty()) {
+            ssid = info.getBSSID();
+        }
+        if(ssid.isEmpty()){
+            callbackContext.error("SSID em branco");
+            return false;
+        }
+
+        callbackContext.success(ssid);
+        //return true;
+         
+            //String name = data.getString(0);
+            //String message = "Trabalhando, " + name;
+            //callbackContext.success(message);
 
             return true;
 
