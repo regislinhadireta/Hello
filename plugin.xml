@@ -9,9 +9,9 @@
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/hello.js" target="js/hello.js"/>
+  <asset src="www/wifi.js" target="js/wifi.js"/>
 
-  <js-module src="www/hello.js" name="wifi">
+  <js-module src="www/wifi.js" name="wifi">
     <clobbers target="wifi" />
   </js-module>
 
