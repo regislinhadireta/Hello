@@ -18,7 +18,7 @@
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Hello">
+      <feature name="Wifi">
         <param name="android-package" value="com.risf.plugin.Wifi"/>
       </feature>
     </config-file>
