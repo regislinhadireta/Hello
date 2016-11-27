@@ -19,11 +19,11 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Hello">
-        <param name="android-package" value="com.example.plugin.Hello"/>
+        <param name="android-package" value="com.example.plugin.Wifi"/>
       </feature>
     </config-file>
 
-    <source-file src="src/android/Hello.java" target-dir="src/com/risf/plugin/"/>
+    <source-file src="src/android/Wifi.java" target-dir="src/com/risf/plugin/"/>
   </platform>
 
   <platform name="ios">
